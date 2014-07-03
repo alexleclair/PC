@@ -3,7 +3,7 @@ App =
 	lastTrigger:-1
 	config:
 		slides:[]
-		triggerWait:15
+		triggerWait:250
 	imagesLoaded:{}
 	init:()->
 		# App.addSlide 'images/slides/1.jpg', 'http://www.akufen.ca/app/assets/images/layout/ipad_logo-small.png'
@@ -97,8 +97,8 @@ App =
 			return;
 		App.currentSlide = id;
 		slide = App.config.slides[id]
-		$('#background .img').hide();
-		slide.$img.show();
+		$('#background .img').fadeOut('fast');
+		slide.$img.fadeIn('fast');
 
 		$('#text').text(slide.text).hide()
 		setTimeout ()->
