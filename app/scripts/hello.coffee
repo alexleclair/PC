@@ -101,6 +101,10 @@ App =
 		slide.$img.fadeIn('fast');
 
 		$('#text').text(slide.text).hide()
+		jQuery("#text").fitText();
+		lineHeight = parseInt($('#text').css('fontSize'));
+		$('#text').css('lineHeight', lineHeight*0.8+'px');
+		$('#text').css('top', $(window).height()/2 - $('#text').height()/2+'px')
 		setTimeout ()->
 			$('#text').fadeIn('slow');
 		, 700
